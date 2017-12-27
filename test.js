@@ -83,4 +83,3 @@ function path (after) {
 function toSeconds (date) {
   return Math.ceil(Number(date) / 1000)
 }
-
