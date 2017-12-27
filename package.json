@@ -1,7 +1,7 @@
 {
   "name": "strava-activities-stream",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Fetch Strava activities as a Readable stream",
   "license": "MIT",
   "repository": "bendrucker/strava-activities-stream",
