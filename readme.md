@@ -1,4 +1,4 @@
-# strava-activities-stream [![Build Status](https://travis-ci.org/bendrucker/strava-activities-stream.svg?branch=master)](https://travis-ci.org/bendrucker/strava-activities-stream)
+# strava-activities-stream [![Build Status](https://travis-ci.org/bendrucker/strava-activities-stream.svg?branch=master)](https://travis-ci.org/bendrucker/strava-activities-stream) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/strava-activities-stream.svg)](https://greenkeeper.io/)
 
 > Fetch Strava activities as a Readable stream
 
