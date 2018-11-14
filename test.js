@@ -19,15 +19,15 @@ test('simple', function (t) {
   strava
     .get(path(start))
     .reply(200, [
-      {id: 1, start_date: start.toDate()},
-      {id: 2, start_date: start.clone().add(2, 'days').toDate()},
-      {id: 3, start_date: endOfFirstPage.toDate()}
+      { id: 1, start_date: start.toDate() },
+      { id: 2, start_date: start.clone().add(2, 'days').toDate() },
+      { id: 3, start_date: endOfFirstPage.toDate() }
     ])
 
   strava
     .get(path(endOfFirstPage))
     .reply(200, [
-      {id: 4, start_date: end}
+      { id: 4, start_date: end }
     ])
 
   strava
@@ -39,13 +39,13 @@ test('simple', function (t) {
     token: '<TOKEN>',
     after: start.toDate()
   })
-  .on('data', activities.push.bind(activities))
-  .on('error', t.end)
-  .on('end', function () {
-    t.equal(activities.length, 4, 'has 4 records')
-    t.deepEqual(activities.map(a => a.id), [1, 2, 3, 4], 'has correct ids')
-    t.end()
-  })
+    .on('data', activities.push.bind(activities))
+    .on('error', t.end)
+    .on('end', function () {
+      t.equal(activities.length, 4, 'has 4 records')
+      t.deepEqual(activities.map(a => a.id), [1, 2, 3, 4], 'has correct ids')
+      t.end()
+    })
 })
 
 test('before', function (t) {
@@ -56,9 +56,9 @@ test('before', function (t) {
   strava
     .get(path(start) + '&before=' + toSeconds(before))
     .reply(200, [
-      {id: 1, start_date: start.toDate()},
-      {id: 2, start_date: start.clone().add(2, 'days').toDate()},
-      {id: 3, start_date: endOfFirstPage.toDate()}
+      { id: 1, start_date: start.toDate() },
+      { id: 2, start_date: start.clone().add(2, 'days').toDate() },
+      { id: 3, start_date: endOfFirstPage.toDate() }
     ])
 
   const activities = []
@@ -67,13 +67,13 @@ test('before', function (t) {
     after: start.toDate(),
     before
   })
-  .on('data', activities.push.bind(activities))
-  .on('error', t.end)
-  .on('end', function () {
-    t.equal(activities.length, 2, 'has 2 records')
-    t.deepEqual(activities.map(a => a.id), [1, 2], 'has correct ids')
-    t.end()
-  })
+    .on('data', activities.push.bind(activities))
+    .on('error', t.end)
+    .on('end', function () {
+      t.equal(activities.length, 2, 'has 2 records')
+      t.deepEqual(activities.map(a => a.id), [1, 2], 'has correct ids')
+      t.end()
+    })
 })
 
 function path (after) {
