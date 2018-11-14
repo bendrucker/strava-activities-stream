@@ -1,12 +1,12 @@
 'use strict'
 
-const {Readable} = require('stream')
+const { Readable } = require('stream')
 const get = require('simple-get')
 const JSONStream = require('JSONStream')
 
 module.exports = class ActivitiesStream extends Readable {
-  constructor ({token, after = new Date(0), before}) {
-    super({objectMode: true})
+  constructor ({ token, after = new Date(0), before }) {
+    super({ objectMode: true })
     this.token = token
     this.last = after
     this.before = before && new Date(before)
