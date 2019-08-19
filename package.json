@@ -23,7 +23,7 @@
   "devDependencies": {
     "moment": "~2.22.2",
     "nock": "~10.0.2",
-    "standard": "^13.0.1",
+    "standard": "^14.0.0",
     "tape": "^4.0.0"
   },
   "files": [
